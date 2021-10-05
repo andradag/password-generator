@@ -11,9 +11,9 @@ function generatePassword() {
   );
 
   console.log(passwordLength);
-  var passworthLength = parseInt(passwordLengthtext);
+  var passwordLength = parseInt(passwordLengthtext);
 
-  if (passworthLength >= 8 && passworthLengthtext < 128) {
+  if (passwordLength >= 8 && passwordLengthtext < 128) {
   } else {
   }
 
