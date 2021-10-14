@@ -44,101 +44,71 @@ const getAcceptanceCriteria = function () {
     return;
   }
 };
+
 const getPasswordLength = function () {
   const passwordLengthtext = parseInt(
     prompt("Please choose the length of the password between 8 and 128")
   );
   return passwordLengthtext;
 };
+
 const numbers = "1234567890";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
 const specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
 function generatePassword() {
   // PLEASE ADD ALL YOUR CODE HERE
 
   const passwordOptions = getAcceptanceCriteria();
-  let result = "";
+  let possibleCharacters = "";
   if (
-    !passwordOptions.isNumber &&
     !passwordOptions.isSpecialChar &&
+    !passwordOptions.isNumber &&
     !passwordOptions.isLowercase &&
     !passwordOptions.isUppercase
   ) {
     alert("Pls select one of the options to proceed");
+    return;
   } else {
+    // add the special characters or arr in the possible options
     if (passwordOptions.isNumber) {
       console.log("yes", numbers);
-      result += numbers;
-      console.log(result, "result");
+      possibleCharacters += numbers;
+      console.log(possibleCharacters, "result");
     }
     if (passwordOptions.isSpecialChar) {
-      result += specialChar;
-
-      // add the special characters or arr in the possible options
+      console.log("yes", specialChar);
+      possibleCharacters += specialChar;
+      console.log(possibleCharacters, "result");
     }
+    if (passwordOptions.isLowercase) {
+      console.log("yes", lowercase);
+      possibleCharacters += lowercase;
+      console.log(possibleCharacters, "result");
+    }
+
+    if (passwordOptions.isUppercase) {
+      console.log("yes", uppercase);
+      possibleCharacters += uppercase;
+      console.log(possibleCharacters, "result");
+    }
+
     const password = [];
     for (let i = 0; i < passwordOptions.length; i++) {
-      const elem = getRandomIndex(result);
+      const elem = getRandomIndex(possibleCharacters);
       password.push(elem);
     }
-    console.log(result, password);
+    console.log(possibleCharacters, password);
     return password.join("");
   }
 }
+
 const getRandomIndex = function (str) {
   const randomIndex = Math.floor(Math.random() * str.length);
   const elem = str.charAt(randomIndex);
   return elem;
 };
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// PLEASE ADD ALL YOUR CODE HERE
-
-const passwordOptions = getAcceptanceCriteria();
-let possibleCharacters = "";
-if (
-  !passwordOptions.isSpecialChar &&
-  !passwordOptions.isNumber &&
-  !passwordOptions.isLowercase &&
-  !passwordOptions.isUppercase
-) {
-  alert("Pls select one of the options to proceed");
-  return;
-} else {
-  // add the special characters or arr in the possible options
-  if (passwordOptions.isNumber) {
-    console.log("yes", numbers);
-    possibleCharacters += numbers;
-    console.log(possibleCharacters, "result");
-  }
-  if (passwordOptions.isSpecialChar) {
-    console.log("yes", specialChar);
-    possibleCharacters += specialChar;
-    console.log(possibleCharacters, "result");
-  }
-  if (passwordOptions.isLowercase) {
-    console.log("yes", lowercase);
-    possibleCharacters += lowercase;
-    console.log(possibleCharacters, "result");
-  }
-
-  if (passwordOptions.isUppercase) {
-    console.log("yes", uppercase);
-    possibleCharacters += uppercase;
-    console.log(possibleCharacters, "result");
-  }
-
-  const password = [];
-  for (let i = 0; i < passwordOptions.length; i++) {
-    const elem = getRandomIndex(possibleCharacters);
-    password.push(elem);
-  }
-  console.log(possibleCharacters, password);
-  return password.join("");
-}
 
 // Write password to the #password input
 function writePassword() {
@@ -147,3 +117,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);

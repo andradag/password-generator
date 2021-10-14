@@ -34,3 +34,30 @@ The user must use at least one criteria.
 Password should appear on the page.
 
 # Screenshots
+
+Click on generate password button
+
+<img src="assets/images/Screenshot-1.png" width="300" height="200"/>
+
+Fill the length criteria
+
+<img src="assets/images/Screenshot-2.png" width="300" height="200"/>
+
+Confirm the number criteria
+
+<img src="assets/images/Screenshot-3.png" width="300" height="200"/>
+
+Confirm the special character criteria
+
+<img src="assets/images/Screenshot-4.png" width="300" height="200"/>
+
+Confirm the lower case criteria
+
+<img src="assets/images/Screenshot-5.png" width="300" height="200"/>
+
+Confirm the upper case criteria
+<img src="assets/images/Screenshot-6.png" width="300" height="200"/>
+
+Password should appear on the page
+
+<img src="assets/images/Screenshot-7.png" width="300" height="200"/>
