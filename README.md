@@ -35,7 +35,7 @@ Password should appear on the page.
 
 ## Deployed URL
 
-You can view the GitHub pages deployed application [here](https://andradag.github.io/Password-Generator/).
+You can view the GitHub pages deployed application [here](https://andradag.github.io/password-generator/).
 
 ## Screenshots
 
